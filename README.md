@@ -1,3 +1,21 @@
+
+
+
+
+## 使用说明（英文）
+
+[XiebroC2-v3.1-README](https://github.com/INotGreen/XiebroC2/blob/main/README_EN.md)
+
+## 更新
+
+[+] 2024.2.18 XiebroC2-3.1发布
+
+[+] 2024.2.20 XiebroC2-3.1 修复bug： [xiebroc2](https://github.com/INotGreen/XiebroC2/releases/download/XieBroC2-v3.1/XiebroC2-v3.1.7z)
+
+随缘更新中。。。
+
+如果您喜欢该项目的话，可以左上角star + fork + follow，非常感谢！
+
 ## 特点
 
 - 被控端(Client)由Golang编写，兼容WIndows、Linux、MacOS上线（未来会考虑移动端上线）
@@ -11,6 +29,8 @@
 - 支持内存执行.net 程序集（execute-assembly、inline-assembly)
 
 - 支持通过lua扩展UI控件、Session命令，载荷生成（类似于CobaltStrike的cna脚本）
+
+- 支持自定义RDIshellcode（仅64位，32位需要手动编译client）或者用[donut](https://github.com/TheWover/donut)、[Godonut](https://github.com/Binject/go-donut)生成属于自己的shellcode
 
 - 支持Teamserver托管二进制文件、文本、图片(类似SimpleHttpServer)
 
@@ -64,7 +84,8 @@ curl -o XiebroC2-v3.1.7z https://github.com/INotGreen/XiebroC2/releases/download
     "Process86": "C:\\Windows\\SysWOW64\\notepad.exe",
     "WebServers": [],
     "listeners": [],
-    "s_Reflection_dll_x64": ""
+    "rdiShellcode64": "",
+    "rdiShellcode32": ""
 }
 ```
 
@@ -91,15 +112,15 @@ Teamserver.exe -c profile.json
 
 | Commands         |               Usage                |                   Description                    |
 | :--------------- | :--------------------------------: | :----------------------------------------------: |
-| nps              |     nps  <powershell command>      |        Unmanaged run powershell in memory        |
-| Inline-assembly  | inline-assembly <FilePath> <args>  |           Inline execute .net assembly           |
-| execute-assembly | execute-assembly <FilePath> <args> | Fork child process execute loader .net  assembly |
-| runpe            |      runpe <FilePath> <args>       |    loader C/C++ PE in the memory for Windwos     |
-| shell            |        shell <cmd command>         |                 Execute  command                 |
-| powershell       |  powershell <powershell command>   |            Execute powershell command            |
+| nps              |     nps  “powershell command”      |        Unmanaged run powershell in memory        |
+| Inline-assembly  | inline-assembly  “FilePath” “args” |           Inline execute .net assembly           |
+| execute-assembly | execute-assembly “FilePath” ”args” | Fork child process execute loader .net  assembly |
+| runpe            |      runpe  “FilePath” “args”      |    loader C/C++ PE in the memory for Windwos     |
+| shell            |        shell “cmd command”         |                 Execute  command                 |
+| powershell       |  powershell “powershell command”   |            Execute powershell command            |
 | checkAV          |              checkAV               |             Detect AV/EDR processes              |
-| upload           | upload <uploadFilePath> <FilePath> |            Upload File to the target             |
-| memfd            |      memfd <FilePath> <args>       |        PE loader in the memory for Linux         |
+| upload           |   upload “RemotePath” “FilePath”   |            Upload File to the target             |
+| memfd            |      memfd “FilePath” “args”       |        PE loader in the memory for Linux         |
 | help             |                help                |                View command list                 |
 | cls              |                cls                 |                   Clear screen                   |
 
@@ -110,6 +131,10 @@ Teamserver.exe -c profile.json
 ## 添加插件
 
 <video src="https://private-user-images.githubusercontent.com/89376703/305687743-fb39df88-0f29-4359-9cd4-fc4bfa698270.mp4" width="640" height="480" controls></video>
+
+## 拖拽式批量上传文件
+
+<video src="https://private-user-images.githubusercontent.com/89376703/306153487-551e96db-9253-4a9f-8c2d-5c99c0280c8a.mp4" width="640" height="480" controls></video>
 
 
 
@@ -126,7 +151,7 @@ Teamserver.exe -c profile.json
 - 目前正反向代理和端口转发未开放，未来考虑完善和开发这个功能。
 
 - 正在开发WebSocket/RUDP/SMB协议的Session模式，Beacon模式仅考虑开发HTTP/HTTPS/DNS。
-- 考虑开发shellcode(raw)、Powershell、VBscript、Hta、Jscript等载荷。
+- 考虑开发Powershell、VBscript、Hta、Jscript等载荷。
 
 - 开放更多窗体和API接口，以便lua扩展插件
 
@@ -134,13 +159,7 @@ Teamserver.exe -c profile.json
 
 
 
-## 更新
 
-[+] 2024.2.18 Xiebro-3.1发布
-
-随缘更新中。。。
-
-如果您喜欢该项目的话，可以左上角star + fork + follow，非常感谢！
 
 ## 免责声明
 

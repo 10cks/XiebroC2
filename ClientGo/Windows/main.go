@@ -202,9 +202,9 @@ func main() {
 	PcInfo.Port = strings.ReplaceAll(Port, " ", "")
 	PcInfo.ListenerName = strings.ReplaceAll(ListenerName, " ", "")
 
-	// PcInfo.Host = "192.168.31.81"
+	// PcInfo.Host = "192.168.1.250"
 	// PcInfo.Port = "4000"
-	// PcInfo.ListenerName = "asd"
+	// PcInfo.ListenerName = "ddd"
 	HideConsole()
 	PcInfo.IsDotNetFour = checkDotNetFramework40()
 	ClientWorking = true
