@@ -125,10 +125,10 @@ func Read(Data []byte, Connection net.Conn) {
 			}
 		}
 		FilePathA := strings.Replace(FilePath, "\\", "/", -1)
-		fmt.Println(FilePathA)
+		//fmt.Println(FilePathA)
 		result, err := listDir(FilePathA)
 		if err != nil {
-			fmt.Printf("Error: %s\n", err)
+			SessionLog(err.Error(), Connection, *unmsgpack)
 			return
 		}
 		//fmt.Println("calc")

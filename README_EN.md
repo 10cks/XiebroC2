@@ -4,6 +4,8 @@
 
 [+] Fixed bug in XiebroC2-3.1 on 2024.2.20: [xiebroc2](https://github.com/INotGreen/XiebroC2/releases/download/XieBroC2-v3.1/XiebroC2-v3.1.7z)
 
+[+] 2024.2.29 XiebroC2 updated, adding Websocket communication protocol, supporting domain front-end and cdn online, and fixing several bugs in 3.1:[xiebroc2-v3.1.1](https://github.com/INotGreen/XiebroC2/releases/download/XiebroC2-v3.1.1/XiebroC2-v3.1.1.7z)
+
 Updates will be released as they come.
 
 If you like this project, feel free to star + fork + follow on the top left corner. Thank you very much!
@@ -115,10 +117,10 @@ Online demo
 
 - Development of a multi-stage loader in C/C++/C#/Rust with the aim to keep the size under 150kb.
 - Currently, reverse proxy and port forwarding features are not available but are considered for future development.
-- Development of Session modes for WebSocket/RUDP/SMB protocols is underway, with Beacon mode limited to HTTP/HTTPS/DNS protocols.
+- Currently, only the Session mode of the TCP/WebSocket protocol is supported. They are replacements for https. We will consider developing a reliable UDP protocol and support the Beacon mode in the future.
 - Consideration for developing payloads for  Powershell, VBscript, Hta, Jscript, etc.
 - Opening more forms and API interfaces for lua extension plugins.
-- The issue of console hiding in Golang is yet to be resolved satisfactorily. If you have solutions, please contact us.
+- Console hidden problem: It has been mistakenly killed by a certain 0 antivirus Q and certain M engine. The solution is to modify the subsystem value in the NT option heads. However, this may still be flagged, so you need to customize RDI shellcode to generate shellcode to avoid secondary killing.
 
 ## Disclaimer
 
