@@ -560,6 +560,9 @@ func InlineAssembly(data []byte, Connection *wsc.Wsc, unmsgpack MessagePack.MsgP
 	if stdout != "" {
 		SessionLog(stdout, Connection, unmsgpack)
 	}
+	if stdout != "" {
+		SessionLog(stdout, Connection, unmsgpack)
+	}
 
 }
 func ExecuteAssembly(data []byte, process string) (string, error) {
